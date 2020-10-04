@@ -10,5 +10,11 @@
 
 #define EXTI_LINE    LINE0 /* 0---15*/
 #define EXTI_MODE    RISING
+ /*
+ FALLING_EDGE
+ RISING_EDGE
+ ON_CHANGE
+*/
+
 
 #endif

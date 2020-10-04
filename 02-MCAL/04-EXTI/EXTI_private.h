@@ -40,8 +40,10 @@ typedef struct {
 #define LINE14  14
 #define LINE15  15
 
-#define  RISING     0
-#define  FALLING    1
-#define  ON_CHANGE  2
+#define  RISING_EDGE     0
+#define  FALLING_EDGE    1
+#define  ON_CHANGE       2
 
+//WE  prefer to start values of #define from 1, because o is default in macros
+// we prefer to leave difference between two values to avoid noise
 #endif

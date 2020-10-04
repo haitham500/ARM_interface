@@ -13,6 +13,10 @@ void MEXTI_voidEnableEXTI(u8 Copy_u8Line);
 void MEXTI_voidDisableEXTI(u8 Copy_u8Line);
 void MEXTI_voidSwTrigger(u8 Copy_u8Line);
 void MEXTI_voidSetSignalLatch(u8 Copy_u8Line, u8 Copy_u8Mode);
+//latch func. change sense mode (rising edge or falling edge or on change)
+
+void MEXTI_voidSetCallBack(void (*ptr)(void));
+}
 
 
 #endif
