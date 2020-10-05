@@ -12,6 +12,7 @@
 #include "MGPIO_interface.h"
 
 	u16 w = 500 ;
+
 int main (void)
 {
 
@@ -23,13 +24,14 @@ int main (void)
 	MRCC_voidEnableAPB2Clk(IOPCEN);
 
 
+		MGPIO_voidSetPinDirection(PORTA,PIN0, INPUT_MODE,PU_PD_INPUT);
+        MGPIO_voidSetPinValue(PORTA, PIN0, MGPIO_HIGH);
 
-		/*MGPIO_voidSetPinDirection(PORTA,PIN0, INPUT_MODE,PU_PD_INPUT);
-        MGPIO_voidSetPinValue(PORTA, PIN0, MGPIO_HIGH);*/
-
-		MGPIO_voidSetPinDirection(PORTA,PIN1, OUTPUT_MAX_10_MHZ,GP_PUSH_PULL_OUTPUT);
-		MGPIO_voidSetPinDirection(PORTA,PIN2, OUTPUT_MAX_10_MHZ,GP_PUSH_PULL_OUTPUT);
+        MGPIO_voidSetPinDirection(PORTA,PIN1, OUTPUT_MAX_2_MHZ,GP_PUSH_PULL_OUTPUT);
+		MGPIO_voidSetPinDirection(PORTA,PIN2, OUTPUT_MAX_2_MHZ,GP_PUSH_PULL_OUTPUT);
 		MGPIO_voidSetPinValue(PORTA, PIN1, MGPIO_HIGH);
+		MGPIO_voidSetPinValue(PORTA, PIN2, MGPIO_HIGH);
+
 
 
 
@@ -64,3 +66,4 @@ int main (void)
 	}
 	return 0;
 }
+
