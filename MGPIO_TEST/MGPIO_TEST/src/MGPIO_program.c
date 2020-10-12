@@ -14,66 +14,66 @@
 
 
 ///////// PORTA PIN direction //////////////////
-void MGPIO_voidSetPAMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_U8ModeBit0,MGPIOX_CRL_BITS MGPIO_U8ModeBit1,MGPIOX_CRL_BITS MGPIO_U8ConfigBit0,MGPIOX_CRL_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPAMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_ModeBit0,MGPIOX_CRL_BITS MGPIO_ModeBit1,MGPIOX_CRL_BITS MGPIO_ConfigBit0,MGPIOX_CRL_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
 
     	}
@@ -83,36 +83,36 @@ void MGPIO_voidSetPAMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -120,33 +120,33 @@ void MGPIO_voidSetPAMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRL,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -155,66 +155,66 @@ void MGPIO_voidSetPAMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 }
 
 
-void MGPIO_voidSetPAMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_U8ModeBit0,MGPIOX_CRH_BITS MGPIO_U8ModeBit1,MGPIOX_CRH_BITS MGPIO_U8ConfigBit0,MGPIOX_CRH_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPAMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_ModeBit0,MGPIOX_CRH_BITS MGPIO_ModeBit1,MGPIOX_CRH_BITS MGPIO_ConfigBit0,MGPIOX_CRH_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
 
     	}
@@ -224,36 +224,36 @@ void MGPIO_voidSetPAMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -261,33 +261,33 @@ void MGPIO_voidSetPAMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOA->MGPIOA_CRH,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -295,9 +295,9 @@ void MGPIO_voidSetPAMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 
 }
 
-void MGPIO_voidSetPApinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
+void MGPIO_voidSetPApinDirection(PIN_T MGPIO_pinPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
 {
-  switch (MGPIO_pinidPINID)
+  switch (MGPIO_pinPINID)
   {
     case PIN0 :
     MGPIO_voidSetPAMode_CRL(MGPIO_modeMODEID,MGPIO_stateSTATE,MODE0_0_CRL,MODE0_1_CRL,CNF0_0_CRL,CNF0_1_CRL);
@@ -354,66 +354,66 @@ void MGPIO_voidSetPApinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,ST
 
 //////////////////PORTB PIN direction////////////////////
 
-void MGPIO_voidSetPBMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_U8ModeBit0,MGPIOX_CRL_BITS MGPIO_U8ModeBit1,MGPIOX_CRL_BITS MGPIO_U8ConfigBit0,MGPIOX_CRL_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPBMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_ModeBit0,MGPIOX_CRL_BITS MGPIO_ModeBit1,MGPIOX_CRL_BITS MGPIO_ConfigBit0,MGPIOX_CRL_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
 
     	}
@@ -423,36 +423,36 @@ void MGPIO_voidSetPBMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -460,33 +460,33 @@ void MGPIO_voidSetPBMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRL,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -495,66 +495,66 @@ void MGPIO_voidSetPBMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 }
 
 
-void MGPIO_voidSetPBMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_U8ModeBit0,MGPIOX_CRH_BITS MGPIO_U8ModeBit1,MGPIOX_CRH_BITS MGPIO_U8ConfigBit0,MGPIOX_CRH_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPBMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_ModeBit0,MGPIOX_CRH_BITS MGPIO_ModeBit1,MGPIOX_CRH_BITS MGPIO_ConfigBit0,MGPIOX_CRH_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
 
     	}
@@ -564,36 +564,36 @@ void MGPIO_voidSetPBMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -601,33 +601,33 @@ void MGPIO_voidSetPBMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOB->MGPIOB_CRH,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -635,9 +635,9 @@ void MGPIO_voidSetPBMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 
 }
 
-void MGPIO_voidSetPBpinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
+void MGPIO_voidSetPBpinDirection(PIN_T MGPIO_pinPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
 {
-  switch (MGPIO_pinidPINID)
+  switch (MGPIO_pinPINID)
   {
     case PIN0 :
     MGPIO_voidSetPBMode_CRL(MGPIO_modeMODEID,MGPIO_stateSTATE,MODE0_0_CRL,MODE0_1_CRL,CNF0_0_CRL,CNF0_1_CRL);
@@ -697,66 +697,66 @@ void MGPIO_voidSetPBpinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,ST
 ////////////////PORTC PIN direction////////////////////
 
 
-void MGPIO_voidSetPCMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_U8ModeBit0,MGPIOX_CRL_BITS MGPIO_U8ModeBit1,MGPIOX_CRL_BITS MGPIO_U8ConfigBit0,MGPIOX_CRL_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPCMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRL_BITS MGPIO_ModeBit0,MGPIOX_CRL_BITS MGPIO_ModeBit1,MGPIOX_CRL_BITS MGPIO_ConfigBit0,MGPIOX_CRL_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
 
     	}
@@ -766,36 +766,36 @@ void MGPIO_voidSetPCMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -803,33 +803,33 @@ void MGPIO_voidSetPCMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRL,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -838,66 +838,66 @@ void MGPIO_voidSetPCMode_CRL(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 }
 
 
-void MGPIO_voidSetPCMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_U8ModeBit0,MGPIOX_CRH_BITS MGPIO_U8ModeBit1,MGPIOX_CRH_BITS MGPIO_U8ConfigBit0,MGPIOX_CRH_BITS MGPIO_U8ConfigBit1)
+void MGPIO_voidSetPCMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX_CRH_BITS MGPIO_ModeBit0,MGPIOX_CRH_BITS MGPIO_ModeBit1,MGPIOX_CRH_BITS MGPIO_ConfigBit0,MGPIOX_CRH_BITS MGPIO_ConfigBit1)
 {
   switch (MGPIO_modeMODEID)
    {
     case INPUT_MODE  :
     	if(MGPIO_stateSTATE== Analog_INPUT)
     	{
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-             CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	     CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+             CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	     CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE== Floating_INPUT)
     	{
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	     CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	     CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
     	}
     	else if (MGPIO_stateSTATE==PU_PD_INPUT)
 		{
-    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 		}
 
      break;
     case OUTPUT_MAX_10_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	{
-    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	{
-    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	{
 
-    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	}
     	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	{
-    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    		  CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    		  CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    		  SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
 
     	}
@@ -907,36 +907,36 @@ void MGPIO_voidSetPCMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
 
-    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	            SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	            SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	            CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
 
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    	      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    	      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    		CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
     	    	}
 
 
@@ -944,33 +944,33 @@ void MGPIO_voidSetPCMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
     case OUTPUT_MAX_50_MHZ:
     	if(MGPIO_stateSTATE==GP_PUSH_PULL_OUTPUT)
     	    	{
-    		      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    		      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    		      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    		      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    		      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    		      SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    		      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    		      CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==GP_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    		   CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    		   SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    		   CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
 
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_PUSH_PULL_OUTPUT)
     	    	{
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    		 CLR_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    		 SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
     	    	}
     	    	else if(MGPIO_stateSTATE==AF_OPEN_DRAIN_OUTPUT)
     	    	{
-    	    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ModeBit1);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit0);
-    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_U8ConfigBit1);
+    	    		SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ModeBit1);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit0);
+    	    	    SET_BIT(MGPIOC->MGPIOC_CRH,MGPIO_ConfigBit1);
     	    	}
 
      break;
@@ -978,9 +978,9 @@ void MGPIO_voidSetPCMode_CRH(MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE,MGPIOX
 
 }
 
-void MGPIO_voidSetPCpinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
+void MGPIO_voidSetPCpinDirection(PIN_T MGPIO_pinPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
 {
-  switch (MGPIO_pinidPINID)
+  switch (MGPIO_pinPINID)
   {
     case PIN0 :
     MGPIO_voidSetPCMode_CRL(MGPIO_modeMODEID,MGPIO_stateSTATE,MODE0_0_CRL,MODE0_1_CRL,CNF0_0_CRL,CNF0_1_CRL);
@@ -1040,20 +1040,20 @@ void MGPIO_voidSetPCpinDirection(PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,ST
 
 
 ///////////Port pin direction///////////////////////
-void MGPIO_voidSetPinDirection(PORTID MGPIO_portidPORTID,PINID MGPIO_pinidPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
+void MGPIO_voidSetPinDirection(PORT_T MGPIO_portPORTID,PIN_T MGPIO_pinPINID,MODE MGPIO_modeMODEID,STATE MGPIO_stateSTATE)
 {
-  switch (MGPIO_portidPORTID)
+  switch (MGPIO_portPORTID)
   {
     case PORTA:
-    MGPIO_voidSetPApinDirection(MGPIO_pinidPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
+    MGPIO_voidSetPApinDirection(MGPIO_pinPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
      break;
 
     case PORTB:
-    MGPIO_voidSetPBpinDirection(MGPIO_pinidPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
+    MGPIO_voidSetPBpinDirection(MGPIO_pinPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
      break;
 
     case PORTC:
-    MGPIO_voidSetPCpinDirection(MGPIO_pinidPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
+    MGPIO_voidSetPCpinDirection(MGPIO_pinPINID,MGPIO_modeMODEID,MGPIO_stateSTATE);
      break;
 
   }
@@ -1065,19 +1065,19 @@ void MGPIO_voidSetPinDirection(PORTID MGPIO_portidPORTID,PINID MGPIO_pinidPINID,
 
 
 ///////////////
-u8 MGPIO_u8GetPinValue(PORTID MGPIO_portidPORTID, PINID MGPIO_pinidPINID)
+u8 MGPIO_u8GetPinValue(PORT_T MGPIO_portPORTID, PIN_T MGPIO_pinPINID)
 {
   u8 LocaLresult=0;
-  switch (MGPIO_portidPORTID)
+  switch (MGPIO_portPORTID)
   {
     case PORTA:
-    LocaLresult=GET_BIT(MGPIOA->MGPIOA_IDR,MGPIO_pinidPINID);
+    LocaLresult=GET_BIT(MGPIOA->MGPIOA_IDR,MGPIO_pinPINID);
      break;
     case PORTB:
-    LocaLresult=GET_BIT(MGPIOB->MGPIOB_IDR,MGPIO_pinidPINID);
+    LocaLresult=GET_BIT(MGPIOB->MGPIOB_IDR,MGPIO_pinPINID);
      break;
     case PORTC:
-    LocaLresult=GET_BIT(MGPIOC->MGPIOC_IDR,MGPIO_pinidPINID);
+    LocaLresult=GET_BIT(MGPIOC->MGPIOC_IDR,MGPIO_pinPINID);
      break;
 
   }
@@ -1086,39 +1086,39 @@ u8 MGPIO_u8GetPinValue(PORTID MGPIO_portidPORTID, PINID MGPIO_pinidPINID)
 }
 
 ////////////
-void  MGPIO_voidSetPinValue(PORTID MGPIO_portidPORTID, PINID MGPIO_pinidPINID,BIT_VALUE MGPIO_BitValue)
+void  MGPIO_voidSetPinValue(PORT_T MGPIO_portPORTID, PIN_T MGPIO_pinPINID,BIT_VALUE MGPIO_BitValue)
 {
-  switch (MGPIO_portidPORTID)
+  switch (MGPIO_portPORTID)
   {
     case PORTA :
     if (MGPIO_BitValue==MGPIO_HIGH)
     {
-     SET_BIT(MGPIOA->MGPIOA_ODR,MGPIO_pinidPINID);
+     SET_BIT(MGPIOA->MGPIOA_ODR,MGPIO_pinPINID);
     }
     else if (MGPIO_BitValue==MGPIO_LOW)
     {
-      CLR_BIT(MGPIOA->MGPIOA_ODR,MGPIO_pinidPINID);
+      CLR_BIT(MGPIOA->MGPIOA_ODR,MGPIO_pinPINID);
     }
       break;
     case PORTB :
     if (MGPIO_BitValue==MGPIO_HIGH)
     {
-     SET_BIT(MGPIOB->MGPIOB_ODR,MGPIO_pinidPINID);
+     SET_BIT(MGPIOB->MGPIOB_ODR,MGPIO_pinPINID);
     }
     else if (MGPIO_BitValue==MGPIO_LOW)
     {
-      CLR_BIT(MGPIOB->MGPIOB_ODR,MGPIO_pinidPINID);
+      CLR_BIT(MGPIOB->MGPIOB_ODR,MGPIO_pinPINID);
     }
 
     break;
     case PORTC :
     if (MGPIO_BitValue==MGPIO_HIGH)
     {
-     SET_BIT(MGPIOC->MGPIOC_ODR,MGPIO_pinidPINID);
+     SET_BIT(MGPIOC->MGPIOC_ODR,MGPIO_pinPINID);
     }
     else if (MGPIO_BitValue==MGPIO_LOW)
     {
-      CLR_BIT(MGPIOC->MGPIOC_ODR,MGPIO_pinidPINID);
+      CLR_BIT(MGPIOC->MGPIOC_ODR,MGPIO_pinPINID);
     }
 
 

@@ -4,16 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/MAFIO_program.c \
 ../src/MGPIO_program.c \
 ../src/MRCC_program.c \
 ../src/main.c 
 
 OBJS += \
+./src/MAFIO_program.o \
 ./src/MGPIO_program.o \
 ./src/MRCC_program.o \
 ./src/main.o 
 
 C_DEPS += \
+./src/MAFIO_program.d \
 ./src/MGPIO_program.d \
 ./src/MRCC_program.d \
 ./src/main.d 

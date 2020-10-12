@@ -1351,6 +1351,44 @@ Discarded input sections
  .bss           0x00000000        0x0 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_macro   0x00000000      0xa6c ./system/src/cmsis/vectors_stm32f10x.o
  .debug_macro   0x00000000      0x34e ./system/src/cmsis/vectors_stm32f10x.o
+ .group         0x00000000        0xc ./src/MAFIO_program.o
+ .group         0x00000000        0xc ./src/MAFIO_program.o
+ .group         0x00000000        0xc ./src/MAFIO_program.o
+ .text          0x00000000        0x0 ./src/MAFIO_program.o
+ .data          0x00000000        0x0 ./src/MAFIO_program.o
+ .bss           0x00000000        0x0 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPortEXTICR1
+                0x00000000       0xb0 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPortEXTICR2
+                0x00000000       0xb0 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPortEXTICR3
+                0x00000000       0xb0 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPortEXTICR4
+                0x00000000       0xb0 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectEXTIPin
+                0x00000000      0x120 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPortEVOUT
+                0x00000000       0x64 ./src/MAFIO_program.o
+ .text.MAFIO_voidSelectPinEVOUT
+                0x00000000      0x270 ./src/MAFIO_program.o
+ .text.MAFIO_voidConfigEventOutput
+                0x00000000       0x34 ./src/MAFIO_program.o
+ .debug_info    0x00000000      0xa75 ./src/MAFIO_program.o
+ .debug_abbrev  0x00000000      0x156 ./src/MAFIO_program.o
+ .debug_loc     0x00000000      0xb62 ./src/MAFIO_program.o
+ .debug_aranges
+                0x00000000       0x58 ./src/MAFIO_program.o
+ .debug_ranges  0x00000000       0x48 ./src/MAFIO_program.o
+ .debug_macro   0x00000000       0x41 ./src/MAFIO_program.o
+ .debug_macro   0x00000000      0xa6c ./src/MAFIO_program.o
+ .debug_macro   0x00000000       0x22 ./src/MAFIO_program.o
+ .debug_macro   0x00000000       0x16 ./src/MAFIO_program.o
+ .debug_line    0x00000000      0x1f6 ./src/MAFIO_program.o
+ .debug_str     0x00000000     0x3df8 ./src/MAFIO_program.o
+ .comment       0x00000000       0x7f ./src/MAFIO_program.o
+ .debug_frame   0x00000000       0xfc ./src/MAFIO_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/MAFIO_program.o
  .group         0x00000000        0xc ./src/MGPIO_program.o
  .group         0x00000000        0xc ./src/MGPIO_program.o
  .group         0x00000000        0xc ./src/MGPIO_program.o
@@ -1358,6 +1396,7 @@ Discarded input sections
  .data          0x00000000        0x0 ./src/MGPIO_program.o
  .bss           0x00000000        0x0 ./src/MGPIO_program.o
  .debug_macro   0x00000000      0xa6c ./src/MGPIO_program.o
+ .debug_macro   0x00000000       0x22 ./src/MGPIO_program.o
  .group         0x00000000        0xc ./src/MRCC_program.o
  .group         0x00000000        0xc ./src/MRCC_program.o
  .group         0x00000000        0xc ./src/MRCC_program.o
@@ -1468,6 +1507,7 @@ LOAD ./system/src/cortexm/_reset_hardware.o
 LOAD ./system/src/cortexm/exception_handlers.o
 LOAD ./system/src/cmsis/system_stm32f10x.o
 LOAD ./system/src/cmsis/vectors_stm32f10x.o
+LOAD ./src/MAFIO_program.o
 LOAD ./src/MGPIO_program.o
 LOAD ./src/MRCC_program.o
 LOAD ./src/main.o
@@ -2069,7 +2109,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x63f3
+.debug_info     0x00000000     0x63fd
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x956 ./system/src/newlib/_exit.o
  .debug_info    0x00000956      0x942 ./system/src/newlib/_sbrk.o
@@ -2081,11 +2121,11 @@ END GROUP
  .debug_info    0x00003221     0x1140 ./system/src/cortexm/exception_handlers.o
  .debug_info    0x00004361      0x494 ./system/src/cmsis/system_stm32f10x.o
  .debug_info    0x000047f5       0xca ./system/src/cmsis/vectors_stm32f10x.o
- .debug_info    0x000048bf     0x111f ./src/MGPIO_program.o
- .debug_info    0x000059de      0x5e1 ./src/MRCC_program.o
- .debug_info    0x00005fbf      0x434 ./src/main.o
+ .debug_info    0x000048bf     0x1123 ./src/MGPIO_program.o
+ .debug_info    0x000059e2      0x5e1 ./src/MRCC_program.o
+ .debug_info    0x00005fc3      0x43a ./src/main.o
 
-.debug_abbrev   0x00000000     0x157d
+.debug_abbrev   0x00000000     0x15c9
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f3 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f3      0x1fc ./system/src/newlib/_sbrk.o
@@ -2097,9 +2137,9 @@ END GROUP
  .debug_abbrev  0x00000d18      0x32b ./system/src/cortexm/exception_handlers.o
  .debug_abbrev  0x00001043      0x177 ./system/src/cmsis/system_stm32f10x.o
  .debug_abbrev  0x000011ba       0x9d ./system/src/cmsis/vectors_stm32f10x.o
- .debug_abbrev  0x00001257      0x15f ./src/MGPIO_program.o
- .debug_abbrev  0x000013b6       0xe7 ./src/MRCC_program.o
- .debug_abbrev  0x0000149d       0xe0 ./src/main.o
+ .debug_abbrev  0x00001257      0x185 ./src/MGPIO_program.o
+ .debug_abbrev  0x000013dc       0xe7 ./src/MRCC_program.o
+ .debug_abbrev  0x000014c3      0x106 ./src/main.o
 
 .debug_line     0x00000000     0x2d66
  *(.debug_line)
@@ -2146,7 +2186,7 @@ END GROUP
  .debug_frame   0x00000910       0x30 d:/arm/imt_sdk_win_64/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x00000940       0x20 d:/arm/imt_sdk_win_64/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x56e25
+.debug_str      0x00000000    0x56e2b
  *(.debug_str)
  .debug_str     0x00000000     0x7cfd ./system/src/newlib/_exit.o
                                0x7ed0 (size before relaxing)
@@ -2168,12 +2208,12 @@ END GROUP
                               0x4e8b9 (size before relaxing)
  .debug_str     0x00055a7b       0x57 ./system/src/cmsis/vectors_stm32f10x.o
                                0x385e (size before relaxing)
- .debug_str     0x00055ad2      0x946 ./src/MGPIO_program.o
-                               0x3698 (size before relaxing)
- .debug_str     0x00056418      0x9ff ./src/MRCC_program.o
-                               0x383a (size before relaxing)
- .debug_str     0x00056e17        0xe ./src/main.o
-                               0x31c2 (size before relaxing)
+ .debug_str     0x00055ad2      0x94c ./src/MGPIO_program.o
+                               0x3691 (size before relaxing)
+ .debug_str     0x0005641e      0x9ff ./src/MRCC_program.o
+                               0x3845 (size before relaxing)
+ .debug_str     0x00056e1d        0xe ./src/main.o
+                               0x31c7 (size before relaxing)
 
 .debug_loc      0x00000000     0x438a
  *(.debug_loc)
@@ -2219,7 +2259,7 @@ OUTPUT(MGPIO_TEST.elf elf32-littlearm)
  .debug_ranges  0x00000270       0x40 ./src/MRCC_program.o
  .debug_ranges  0x000002b0       0x40 ./src/main.o
 
-.debug_macro    0x00000000     0x2744
+.debug_macro    0x00000000     0x2722
  .debug_macro   0x00000000      0x1b4 ./system/src/newlib/_exit.o
  .debug_macro   0x000001b4       0x9c ./system/src/newlib/_exit.o
  .debug_macro   0x00000250      0x10e ./system/src/newlib/_exit.o
@@ -2265,9 +2305,8 @@ OUTPUT(MGPIO_TEST.elf elf32-littlearm)
  .debug_macro   0x00002461      0x16e ./system/src/cmsis/system_stm32f10x.o
  .debug_macro   0x000025cf       0x34 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_macro   0x00002603       0x41 ./src/MGPIO_program.o
- .debug_macro   0x00002644       0x22 ./src/MGPIO_program.o
- .debug_macro   0x00002666       0x2e ./src/MGPIO_program.o
- .debug_macro   0x00002694       0x40 ./src/MRCC_program.o
- .debug_macro   0x000026d4       0x16 ./src/MRCC_program.o
- .debug_macro   0x000026ea       0x22 ./src/MRCC_program.o
- .debug_macro   0x0000270c       0x38 ./src/main.o
+ .debug_macro   0x00002644       0x2e ./src/MGPIO_program.o
+ .debug_macro   0x00002672       0x40 ./src/MRCC_program.o
+ .debug_macro   0x000026b2       0x16 ./src/MRCC_program.o
+ .debug_macro   0x000026c8       0x22 ./src/MRCC_program.o
+ .debug_macro   0x000026ea       0x38 ./src/main.o
