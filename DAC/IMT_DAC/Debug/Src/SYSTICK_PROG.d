@@ -1,0 +1,10 @@
+Src/SYSTICK_PROG.o: ../Src/SYSTICK_PROG.c ../Inc/TYPES.h ../Inc/MACROS.h \
+ ../Inc/SYSTICK_INTERFACE.h ../Inc/SYSTICK_REG.h
+
+../Inc/TYPES.h:
+
+../Inc/MACROS.h:
+
+../Inc/SYSTICK_INTERFACE.h:
+
+../Inc/SYSTICK_REG.h:

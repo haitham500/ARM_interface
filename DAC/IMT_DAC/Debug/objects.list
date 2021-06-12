@@ -1,0 +1,6 @@
+"Src/DAC_PROG.o"
+"Src/GPIO.o"
+"Src/RCC_PROG.o"
+"Src/SYSTICK_PROG.o"
+"Src/main.o"
+"Startup/startup_stm32f103c8tx.o"

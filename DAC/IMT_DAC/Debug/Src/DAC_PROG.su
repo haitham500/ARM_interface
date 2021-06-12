@@ -1,0 +1,3 @@
+DAC_PROG.c:19:6:DAC_CALLBACK	8	static
+DAC_PROG.c:30:6:MDAC_VidInit	8	static
+DAC_PROG.c:37:6:MDAC_VidPlay	8	static

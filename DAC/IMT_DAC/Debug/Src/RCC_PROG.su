@@ -1,0 +1,3 @@
+RCC_PROG.c:16:6:MRCC_VidInit	16	static
+RCC_PROG.c:152:6:MRCC_VidEnablePeripheralClock	16	static
+RCC_PROG.c:166:6:MRCC_VidDisablePeripheralClock	16	static

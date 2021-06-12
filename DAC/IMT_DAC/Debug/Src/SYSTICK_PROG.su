@@ -1,0 +1,6 @@
+SYSTICK_PROG.c:15:6:SysTick_Handler	8	static
+SYSTICK_PROG.c:21:6:MSTK_VidSetCallBack	16	static
+SYSTICK_PROG.c:26:6:MSTK_VidInit	4	static
+SYSTICK_PROG.c:34:6:MSTK_VidStart	16	static
+SYSTICK_PROG.c:46:6:MSTK_VidINTStatus	16	static
+SYSTICK_PROG.c:53:4:MSTK_u8ReadFlag	4	static
