@@ -1,0 +1,6 @@
+Src/SYSTICK_PROG.o: ../Src/SYSTICK_PROG.c ../Inc/BIT_MATH.h \
+ ../Inc/STD_TYPES.h ../Inc/SYSTICK_INTERFACE.h ../Inc/SYSTICK_REG.h
+../Inc/BIT_MATH.h:
+../Inc/STD_TYPES.h:
+../Inc/SYSTICK_INTERFACE.h:
+../Inc/SYSTICK_REG.h:
