@@ -1,0 +1,8 @@
+"./Src/MDMA_program.o"
+"./Src/MGPIO_program.o"
+"./Src/MNVIC_program.o"
+"./Src/MRCC_program.o"
+"./Src/MSCB_program.o"
+"./Src/SYSTICK_PROG.o"
+"./Src/main.o"
+"./Startup/startup_stm32f103c8tx.o"

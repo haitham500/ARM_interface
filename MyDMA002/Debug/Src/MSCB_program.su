@@ -1,0 +1,2 @@
+../Src/MSCB_program.c:15:6:MSCB_voidSetPriorityGroupControl	4	static
+../Src/MSCB_program.c:20:6:MSCB_voidEnableUnprivilegedSW	4	static
