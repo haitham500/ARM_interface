@@ -1,0 +1,8 @@
+../Src/MSTK_program.c:23:6:MSTK_voidSystickInit	4	static
+../Src/MSTK_program.c:35:6:MSTK_voidDelay	16	static
+../Src/MSTK_program.c:49:6:MSTK_voidOneShot	16	static
+../Src/MSTK_program.c:68:6:MSTK_voidMultiShot	16	static
+../Src/MSTK_program.c:89:6:MSTK_voidStop	4	static
+../Src/MSTK_program.c:98:5:MSTK_u32GetElapsedTime	16	static
+../Src/MSTK_program.c:106:6:MSTK_u32GetRemainingTime	16	static
+../Src/MSTK_program.c:114:6:SysTick_Handler	8	static

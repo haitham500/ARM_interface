@@ -1,0 +1,8 @@
+../Src/MAFIO_program.c:16:6:MAFIO_voidSelectPortEXTICR1	16	static
+../Src/MAFIO_program.c:42:6:MAFIO_voidSelectPortEXTICR2	16	static
+../Src/MAFIO_program.c:68:6:MAFIO_voidSelectPortEXTICR3	16	static
+../Src/MAFIO_program.c:94:6:MAFIO_voidSelectPortEXTICR4	16	static
+../Src/MAFIO_program.c:121:6:MAFIO_voidSelectEXTIPin	24	static
+../Src/MAFIO_program.c:179:6:MAFIO_voidSelectPortEVOUT	16	static
+../Src/MAFIO_program.c:201:6:MAFIO_voidSelectPinEVOUT	16	static
+../Src/MAFIO_program.c:304:6:MAFIO_voidConfigEventOutput	16	static
