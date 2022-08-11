@@ -1,0 +1,12 @@
+../Src/MGPIO_program.c:18:13:MGPIO_voidSetPAMode_CRL	16	static
+../Src/MGPIO_program.c:159:13:MGPIO_voidSetPAMode_CRH	16	static
+../Src/MGPIO_program.c:299:13:MGPIO_voidSetPApinDirection	24	static
+../Src/MGPIO_program.c:358:13:MGPIO_voidSetPBMode_CRL	16	static
+../Src/MGPIO_program.c:499:13:MGPIO_voidSetPBMode_CRH	16	static
+../Src/MGPIO_program.c:639:13:MGPIO_voidSetPBpinDirection	24	static
+../Src/MGPIO_program.c:701:13:MGPIO_voidSetPCMode_CRL	16	static
+../Src/MGPIO_program.c:842:13:MGPIO_voidSetPCMode_CRH	16	static
+../Src/MGPIO_program.c:982:13:MGPIO_voidSetPCpinDirection	24	static
+../Src/MGPIO_program.c:1044:6:MGPIO_voidSetPinDirection	24	static
+../Src/MGPIO_program.c:1069:4:MGPIO_u8GetPinValue	24	static
+../Src/MGPIO_program.c:1090:7:MGPIO_voidSetPinValue	16	static

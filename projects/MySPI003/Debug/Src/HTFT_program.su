@@ -1,0 +1,4 @@
+../Src/HTFT_program.c:20:13:HTFT_voidWriteCommand	16	static
+../Src/HTFT_program.c:31:13:HTFT_voidWriteData	16	static
+../Src/HTFT_program.c:43:6:HTFT_voidInit	8	static
+../Src/HTFT_program.c:72:6:HTFT_voidFillImage	24	static

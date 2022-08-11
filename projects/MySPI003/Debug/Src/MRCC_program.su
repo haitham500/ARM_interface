@@ -1,0 +1,7 @@
+../Src/MRCC_program.c:15:6:MRCC_voidInitSysClk	4	static
+../Src/MRCC_program.c:90:6:MRCC_voidEnableAHBClk	16	static
+../Src/MRCC_program.c:94:6:MRCC_voidEnableAPB2Clk	16	static
+../Src/MRCC_program.c:98:6:MRCC_voidEnableAPB1Clk	16	static
+../Src/MRCC_program.c:106:6:MRCC_voidDisableAHBClk	16	static
+../Src/MRCC_program.c:110:6:MRCC_voidDisableAPB2Clk	16	static
+../Src/MRCC_program.c:114:6:MRCC_voidDisableAPB1Clk	16	static

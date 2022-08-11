@@ -1,0 +1,6 @@
+../Src/MNVIC_program.c:15:6:MNVIC_voidSetEnableINT	16	static
+../Src/MNVIC_program.c:32:6:MNVIC_voidClearEnableINT	16	static
+../Src/MNVIC_program.c:49:6:MNVIC_voidSetPendingFlagINT	16	static
+../Src/MNVIC_program.c:65:6:MNVIC_voidClearPendingFlagINT	16	static
+../Src/MNVIC_program.c:82:4:MNVIC_u8GetActiveBitFlagINT	24	static
+../Src/MNVIC_program.c:100:6:MNVIC_voidSetPriorityINT	16	static

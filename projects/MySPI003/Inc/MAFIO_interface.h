@@ -9,7 +9,6 @@
 #ifndef  MAFIO_INTERFACE_H
 #define  MAFIO_INTERFACE_H
 
-
 typedef enum STATE_EVOUT
 {
   enable,
@@ -591,5 +590,6 @@ void MAFIO_voidConfigEventOutput(STATE_EVOUT_T MAFIO_State,PORT_T MAFIO_portPORT
 
 ///////remap functions/////////
 void MAFIO_voidRemapSPI1(void);
+
 
 #endif

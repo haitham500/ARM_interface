@@ -1,0 +1,5 @@
+../Src/MSPI_program.c:16:6:MSPI_voidinit	4	static
+../Src/MSPI_program.c:76:6:MSPI_voidSendCharSynch	16	static
+../Src/MSPI_program.c:84:4:MSPI_u8ReceiveCharSynch	4	static
+../Src/MSPI_program.c:90:6:MSPI_voidSetCallBack	16	static
+../Src/MSPI_program.c:95:6:SPI1_IRQHandler	8	static
