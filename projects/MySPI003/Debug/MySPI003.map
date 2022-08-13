@@ -34,6 +34,16 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Src/HTFT_program.o
  .data          0x0000000000000000        0x0 ./Src/HTFT_program.o
  .bss           0x0000000000000000        0x0 ./Src/HTFT_program.o
+ .text.HTFT_voidFillColor
+                0x0000000000000000       0x7e ./Src/HTFT_program.o
+ .text.HTFT_voidDrawHLine
+                0x0000000000000000       0x86 ./Src/HTFT_program.o
+ .text.HTFT_voidDrawVLine
+                0x0000000000000000       0x86 ./Src/HTFT_program.o
+ .text.HTFT_voidDrawRectangle
+                0x0000000000000000       0x62 ./Src/HTFT_program.o
+ .text.HTFT_voidWriteChar
+                0x0000000000000000       0xd6 ./Src/HTFT_program.o
  .group         0x0000000000000000        0xc ./Src/MAFIO_program.o
  .group         0x0000000000000000        0xc ./Src/MAFIO_program.o
  .group         0x0000000000000000        0xc ./Src/MAFIO_program.o
@@ -615,48 +625,48 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000     0x197d
- .debug_info    0x0000000000000000      0x249 ./Src/HTFT_program.o
- .debug_info    0x0000000000000249      0x950 ./Src/MGPIO_program.o
- .debug_info    0x0000000000000b99      0x5fd ./Src/MRCC_program.o
- .debug_info    0x0000000000001196      0x287 ./Src/MSPI_program.o
- .debug_info    0x000000000000141d      0x216 ./Src/MSTK_program.o
- .debug_info    0x0000000000001633      0x328 ./Src/main.o
- .debug_info    0x000000000000195b       0x22 ./Startup/startup_stm32f103c8tx.o
+.debug_info     0x0000000000000000     0x1b81
+ .debug_info    0x0000000000000000      0x44d ./Src/HTFT_program.o
+ .debug_info    0x000000000000044d      0x950 ./Src/MGPIO_program.o
+ .debug_info    0x0000000000000d9d      0x5fd ./Src/MRCC_program.o
+ .debug_info    0x000000000000139a      0x287 ./Src/MSPI_program.o
+ .debug_info    0x0000000000001621      0x216 ./Src/MSTK_program.o
+ .debug_info    0x0000000000001837      0x328 ./Src/main.o
+ .debug_info    0x0000000000001b5f       0x22 ./Startup/startup_stm32f103c8tx.o
 
-.debug_abbrev   0x0000000000000000      0x7cc
- .debug_abbrev  0x0000000000000000      0x160 ./Src/HTFT_program.o
- .debug_abbrev  0x0000000000000160      0x1be ./Src/MGPIO_program.o
- .debug_abbrev  0x000000000000031e       0xfd ./Src/MRCC_program.o
- .debug_abbrev  0x000000000000041b      0x13d ./Src/MSPI_program.o
- .debug_abbrev  0x0000000000000558      0x11a ./Src/MSTK_program.o
- .debug_abbrev  0x0000000000000672      0x148 ./Src/main.o
- .debug_abbrev  0x00000000000007ba       0x12 ./Startup/startup_stm32f103c8tx.o
+.debug_abbrev   0x0000000000000000      0x7d5
+ .debug_abbrev  0x0000000000000000      0x169 ./Src/HTFT_program.o
+ .debug_abbrev  0x0000000000000169      0x1be ./Src/MGPIO_program.o
+ .debug_abbrev  0x0000000000000327       0xfd ./Src/MRCC_program.o
+ .debug_abbrev  0x0000000000000424      0x13d ./Src/MSPI_program.o
+ .debug_abbrev  0x0000000000000561      0x11a ./Src/MSTK_program.o
+ .debug_abbrev  0x000000000000067b      0x148 ./Src/main.o
+ .debug_abbrev  0x00000000000007c3       0x12 ./Startup/startup_stm32f103c8tx.o
 
-.debug_aranges  0x0000000000000000      0x1e0
+.debug_aranges  0x0000000000000000      0x208
  .debug_aranges
-                0x0000000000000000       0x38 ./Src/HTFT_program.o
+                0x0000000000000000       0x60 ./Src/HTFT_program.o
  .debug_aranges
-                0x0000000000000038       0x78 ./Src/MGPIO_program.o
+                0x0000000000000060       0x78 ./Src/MGPIO_program.o
  .debug_aranges
-                0x00000000000000b0       0x50 ./Src/MRCC_program.o
+                0x00000000000000d8       0x50 ./Src/MRCC_program.o
  .debug_aranges
-                0x0000000000000100       0x40 ./Src/MSPI_program.o
+                0x0000000000000128       0x40 ./Src/MSPI_program.o
  .debug_aranges
-                0x0000000000000140       0x58 ./Src/MSTK_program.o
+                0x0000000000000168       0x58 ./Src/MSTK_program.o
  .debug_aranges
-                0x0000000000000198       0x20 ./Src/main.o
+                0x00000000000001c0       0x20 ./Src/main.o
  .debug_aranges
-                0x00000000000001b8       0x28 ./Startup/startup_stm32f103c8tx.o
+                0x00000000000001e0       0x28 ./Startup/startup_stm32f103c8tx.o
 
-.debug_ranges   0x0000000000000000      0x178
- .debug_ranges  0x0000000000000000       0x28 ./Src/HTFT_program.o
- .debug_ranges  0x0000000000000028       0x68 ./Src/MGPIO_program.o
- .debug_ranges  0x0000000000000090       0x40 ./Src/MRCC_program.o
- .debug_ranges  0x00000000000000d0       0x30 ./Src/MSPI_program.o
- .debug_ranges  0x0000000000000100       0x48 ./Src/MSTK_program.o
- .debug_ranges  0x0000000000000148       0x10 ./Src/main.o
- .debug_ranges  0x0000000000000158       0x20 ./Startup/startup_stm32f103c8tx.o
+.debug_ranges   0x0000000000000000      0x1a0
+ .debug_ranges  0x0000000000000000       0x50 ./Src/HTFT_program.o
+ .debug_ranges  0x0000000000000050       0x68 ./Src/MGPIO_program.o
+ .debug_ranges  0x00000000000000b8       0x40 ./Src/MRCC_program.o
+ .debug_ranges  0x00000000000000f8       0x30 ./Src/MSPI_program.o
+ .debug_ranges  0x0000000000000128       0x48 ./Src/MSTK_program.o
+ .debug_ranges  0x0000000000000170       0x10 ./Src/main.o
+ .debug_ranges  0x0000000000000180       0x20 ./Startup/startup_stm32f103c8tx.o
 
 .debug_macro    0x0000000000000000      0xeb0
  .debug_macro   0x0000000000000000       0x5c ./Src/HTFT_program.o
@@ -680,29 +690,29 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000000e0e       0x74 ./Src/main.o
  .debug_macro   0x0000000000000e82       0x2e ./Src/main.o
 
-.debug_line     0x0000000000000000     0x1103
- .debug_line    0x0000000000000000      0x18d ./Src/HTFT_program.o
- .debug_line    0x000000000000018d      0x940 ./Src/MGPIO_program.o
- .debug_line    0x0000000000000acd      0x13d ./Src/MRCC_program.o
- .debug_line    0x0000000000000c0a      0x146 ./Src/MSPI_program.o
- .debug_line    0x0000000000000d50      0x209 ./Src/MSTK_program.o
- .debug_line    0x0000000000000f59      0x126 ./Src/main.o
- .debug_line    0x000000000000107f       0x84 ./Startup/startup_stm32f103c8tx.o
+.debug_line     0x0000000000000000     0x12b7
+ .debug_line    0x0000000000000000      0x341 ./Src/HTFT_program.o
+ .debug_line    0x0000000000000341      0x940 ./Src/MGPIO_program.o
+ .debug_line    0x0000000000000c81      0x13d ./Src/MRCC_program.o
+ .debug_line    0x0000000000000dbe      0x146 ./Src/MSPI_program.o
+ .debug_line    0x0000000000000f04      0x209 ./Src/MSTK_program.o
+ .debug_line    0x000000000000110d      0x126 ./Src/main.o
+ .debug_line    0x0000000000001233       0x84 ./Startup/startup_stm32f103c8tx.o
 
-.debug_str      0x0000000000000000     0x49a3
- .debug_str     0x0000000000000000     0x32af ./Src/HTFT_program.o
-                                       0x330b (size before relaxing)
- .debug_str     0x00000000000032af      0x7b1 ./Src/MGPIO_program.o
+.debug_str      0x0000000000000000     0x4aaa
+ .debug_str     0x0000000000000000     0x33b6 ./Src/HTFT_program.o
+                                       0x3412 (size before relaxing)
+ .debug_str     0x00000000000033b6      0x7b1 ./Src/MGPIO_program.o
                                        0x375f (size before relaxing)
- .debug_str     0x0000000000003a60      0xa16 ./Src/MRCC_program.o
+ .debug_str     0x0000000000003b67      0xa16 ./Src/MRCC_program.o
                                        0x3913 (size before relaxing)
- .debug_str     0x0000000000004476      0x25a ./Src/MSPI_program.o
+ .debug_str     0x000000000000457d      0x25a ./Src/MSPI_program.o
                                        0x31f2 (size before relaxing)
- .debug_str     0x00000000000046d0      0x19d ./Src/MSTK_program.o
+ .debug_str     0x00000000000047d7      0x19d ./Src/MSTK_program.o
                                        0x3103 (size before relaxing)
- .debug_str     0x000000000000486d      0x105 ./Src/main.o
+ .debug_str     0x0000000000004974      0x105 ./Src/main.o
                                        0x35f7 (size before relaxing)
- .debug_str     0x0000000000004972       0x31 ./Startup/startup_stm32f103c8tx.o
+ .debug_str     0x0000000000004a79       0x31 ./Startup/startup_stm32f103c8tx.o
                                          0x5e (size before relaxing)
 
 .comment        0x0000000000000000       0x50
@@ -714,11 +724,11 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .comment       0x0000000000000050       0x51 ./Src/MSTK_program.o
  .comment       0x0000000000000050       0x51 ./Src/main.o
 
-.debug_frame    0x0000000000000000      0x608
- .debug_frame   0x0000000000000000       0x98 ./Src/HTFT_program.o
- .debug_frame   0x0000000000000098      0x208 ./Src/MGPIO_program.o
- .debug_frame   0x00000000000002a0      0x120 ./Src/MRCC_program.o
- .debug_frame   0x00000000000003c0       0xbc ./Src/MSPI_program.o
- .debug_frame   0x000000000000047c      0x134 ./Src/MSTK_program.o
- .debug_frame   0x00000000000005b0       0x2c ./Src/main.o
- .debug_frame   0x00000000000005dc       0x2c c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+.debug_frame    0x0000000000000000      0x6c8
+ .debug_frame   0x0000000000000000      0x158 ./Src/HTFT_program.o
+ .debug_frame   0x0000000000000158      0x208 ./Src/MGPIO_program.o
+ .debug_frame   0x0000000000000360      0x120 ./Src/MRCC_program.o
+ .debug_frame   0x0000000000000480       0xbc ./Src/MSPI_program.o
+ .debug_frame   0x000000000000053c      0x134 ./Src/MSTK_program.o
+ .debug_frame   0x0000000000000670       0x2c ./Src/main.o
+ .debug_frame   0x000000000000069c       0x2c c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)

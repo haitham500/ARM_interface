@@ -12,7 +12,7 @@
 #include "MSTK_interface.h"
 #include "MSPI_interface.h"
 
-#include " HTFT_interface.h"
+#include "HTFT_interface.h"
 #include "HTFT_private.h"
 #include "HTFT_config.h"
 

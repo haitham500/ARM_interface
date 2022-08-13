@@ -2,3 +2,8 @@
 ../Src/HTFT_program.c:31:13:HTFT_voidWriteData	16	static
 ../Src/HTFT_program.c:43:6:HTFT_voidInit	8	static
 ../Src/HTFT_program.c:72:6:HTFT_voidFillImage	24	static
+../Src/HTFT_program.c:108:6:HTFT_voidFillColor	24	static
+../Src/HTFT_program.c:135:6:HTFT_voidDrawHLine	24	static
+../Src/HTFT_program.c:160:6:HTFT_voidDrawVLine	24	static
+../Src/HTFT_program.c:185:6:HTFT_voidDrawRectangle	24	static
+../Src/HTFT_program.c:194:6:HTFT_voidWriteChar	24	static
