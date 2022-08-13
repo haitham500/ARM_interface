@@ -191,8 +191,8 @@ void HTFT_voidDrawRectangle ( u8 HTFT_u8Height , u8 HTFT_u8Width , u8 Xaxis , u8
 
 }
 
-void HTFT_voidWriteChar( u8 * HTFT_u8Char , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color ){
-
+void HTFT_voidWriteChar( u8 * HTFT_u8Char , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color )
+{
 	u8  LOC_u8Mask = 0x01 ;
 	u8  LOC_u8DataMasked  ;
 	u16 LOC_u8Pixel       ;
