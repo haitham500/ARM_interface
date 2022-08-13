@@ -12,7 +12,7 @@
 #include "MSTK_interface.h"
 #include "MSPI_interface.h"
 
-#include "HTFT_interface.h"
+#include " HTFT_interface.h"
 #include "HTFT_private.h"
 #include "HTFT_config.h"
 
@@ -99,6 +99,135 @@ void HTFT_voidFillImage ( const u16 * HTFT_ptrImage )
 			HTFT_ptrImage ++;
 
 		}
+	}
+
+}
+
+////////////////
+
+void HTFT_voidFillColor ( u16 HTFT_u16Color )
+{
+	u8 LOC_u8CountX ;
+	u8 LOC_u8CountY ;
+
+	for( LOC_u8CountY = 0 ; LOC_u8CountY < 160 ; LOC_u8CountY++ )
+	{
+		HTFT_voidWriteCommand( CASET        ) ; // set column range (x0,x1)
+		HTFT_voidWriteData   ( 0            ) ;
+		HTFT_voidWriteData   ( 0            ) ;
+		HTFT_voidWriteCommand( RASET        ) ; // set row range (y0,y1)
+		HTFT_voidWriteData   ( 0            ) ;
+		HTFT_voidWriteData   ( LOC_u8CountY ) ;
+
+		HTFT_voidWriteCommand( RAMWR        ); // memory write
+
+		for ( LOC_u8CountX = 0 ; LOC_u8CountX < 128 ; LOC_u8CountX++ )
+		{
+			HTFT_voidWriteData ( HTFT_u16Color >> 8   ) ; // write hi byte
+			HTFT_voidWriteData ( HTFT_u16Color & 0xFF ) ; // write lo byte
+
+		}
+	}
+
+}
+//////////////////
+
+void HTFT_voidDrawHLine ( u8 Xaxis , u8 Yaxis , u8 HTFT_u8Length , u16 HTFT_u8Color )
+{
+	for ( ; HTFT_u8Length > 0 ; HTFT_u8Length-- ){
+
+		HTFT_voidWriteCommand( CASET ); // set column range (x0,x1)
+
+		HTFT_voidWriteData   ( Xaxis );
+		HTFT_voidWriteData   ( Xaxis );
+
+		HTFT_voidWriteCommand( RASET ); // set row range (y0,y1)
+
+		HTFT_voidWriteData   ( Yaxis );
+		HTFT_voidWriteData   ( Yaxis );
+
+		HTFT_voidWriteCommand( RAMWR ); // memory write
+
+		HTFT_voidWriteData ( HTFT_u8Color >> 8   ); // write hi byte
+		HTFT_voidWriteData ( HTFT_u8Color & 0xFF ); // write lo byte
+
+		Xaxis++;
+
+	}
+
+}
+
+void HTFT_voidDrawVLine ( u8 Xaxis , u8 Yaxis , u8 HTFT_u8Length , u16 HTFT_u8Color )
+{
+	for ( ; HTFT_u8Length > 0 ; HTFT_u8Length-- ){
+
+		HTFT_voidWriteCommand( CASET ); // set column range (x0,x1)
+
+		HTFT_voidWriteData   ( Xaxis );
+		HTFT_voidWriteData   ( Xaxis );
+
+		HTFT_voidWriteCommand( RASET ); // set row range (y0,y1)
+
+		HTFT_voidWriteData   ( Yaxis );
+		HTFT_voidWriteData   ( Yaxis );
+
+		HTFT_voidWriteCommand( RAMWR ); // memory write
+
+		HTFT_voidWriteData ( HTFT_u8Color >> 8   ); // write hi byte
+		HTFT_voidWriteData ( HTFT_u8Color & 0xFF ); // write lo byte
+
+		Yaxis++;
+
+	}
+
+}
+
+void HTFT_voidDrawRectangle ( u8 HTFT_u8Height , u8 HTFT_u8Width , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color )
+{
+ HTFT_voidDrawHLine ( Xaxis , Yaxis , HTFT_u8Width  , HTFT_u8Color                 );
+ HTFT_voidDrawVLine ( Xaxis , Yaxis , HTFT_u8Height , HTFT_u8Color                 );
+ HTFT_voidDrawHLine ( Xaxis , HTFT_u8Height + Yaxis , HTFT_u8Width  , HTFT_u8Color );
+ HTFT_voidDrawVLine ( HTFT_u8Width + Xaxis , Yaxis , HTFT_u8Height , HTFT_u8Color  );
+
+}
+
+void HTFT_voidWriteChar( u8 * HTFT_u8Char , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color ){
+
+	u8  LOC_u8Mask = 0x01 ;
+	u8  LOC_u8DataMasked  ;
+	u16 LOC_u8Pixel       ;
+
+	for( u8 LOC_u8Iterator1 = 0 ; LOC_u8Iterator1 < 5 ; LOC_u8Iterator1++ ){
+
+		for( u8 LOC_u8Iterator2 = 0 ; LOC_u8Iterator2 < 7 ; LOC_u8Iterator2++ ){
+
+			/* Set The Position Of 5x7 Character */
+			HTFT_voidWriteCommand( CASET ); // set column range (x0,x1)
+
+			HTFT_voidWriteData( Xaxis +  LOC_u8Iterator1 );
+			HTFT_voidWriteData( Xaxis +  LOC_u8Iterator1 );
+
+			HTFT_voidWriteCommand( RASET ); // set row range (y0,y1)
+
+			HTFT_voidWriteData( Yaxis +  LOC_u8Iterator2 );
+			HTFT_voidWriteData( Yaxis +  LOC_u8Iterator2 );
+
+			HTFT_voidWriteCommand( RAMWR ); // memory write
+
+			LOC_u8DataMasked = HTFT_u8Char[ LOC_u8Iterator1 ] & LOC_u8Mask ;
+
+			if( LOC_u8DataMasked == 0  ) { LOC_u8Pixel = 0x0000       ; }
+			else                         { LOC_u8Pixel = HTFT_u8Color ; }
+
+			HTFT_voidWriteData ( LOC_u8Pixel >> 8   ); // write hi byte
+			HTFT_voidWriteData ( LOC_u8Pixel & 0xFF ); // write lo byte
+
+			LOC_u8Mask <<= 1 ;
+
+		}
+
+		LOC_u8Mask = 0x01 ;
+
 	}
 
 }

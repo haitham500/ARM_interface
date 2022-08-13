@@ -37,6 +37,13 @@
 
 void HTFT_voidInit ( void ) ;
 void HTFT_voidFillImage ( const u16 * HTFT_ptrImage );
+void HTFT_voidFillColor ( u16 HTFT_u16Color );
+void HTFT_voidDrawHLine ( u8 Xaxis , u8 Yaxis , u8 HTFT_u8Length , u16 HTFT_u8Color );
+void HTFT_voidDrawVLine ( u8 Xaxis , u8 Yaxis , u8 HTFT_u8Length , u16 HTFT_u8Color );
+void HTFT_voidDrawRectangle ( u8 HTFT_u8Height , u8 HTFT_u8Width , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color );
+void HTFT_voidWriteChar( u8 * HTFT_u8Char , u8 Xaxis , u8 Yaxis , u16 HTFT_u8Color );
+
+
 
 
 
